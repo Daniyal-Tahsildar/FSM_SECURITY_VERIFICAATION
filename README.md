@@ -35,4 +35,4 @@ You may find errors or bugs in your initial design. If you do, fix your FSM impl
 - [Images](Images) : Contains the images used in this readme file.
 - [Group5_Report.pdf](https://github.com/Daniyal-Tahsildar/FSM_SECURITY_VERIFICAATION/blob/1dc113b084539e79567d35ed2802e036a82326b4/Group5_Report.pdf) : Project report.
 
-  *Feel free to explore these directories to gain insights into the project's architecture and components. All project details are documented in the report*
+*Feel free to explore these directories to gain insights into the project's architecture and components. All project details are documented in the report*
