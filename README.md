@@ -18,10 +18,13 @@ FSM remains in its current state. You are required to implement the RTL design a
 security verification of this FSM circuit.
 
 ## Project Goal 
+  <img align = "right" src="Images/FSM.png" width="30%" height="auto"/>
+
 Design the FSM in RTL code and verify it using both conventional tests (a “test bench”) and formal approaches.
 Both undergraduates and graduates should attempt to implement as rigorous a testbench as possible. For the formal verication
 portion, undergraduates will implement five assertions to-be-checked in Jaspergold and graduate students will implement ten.
 You may find errors or bugs in your initial design. If you do, fix your FSM implementation and re-run the tests.
+
 
 ### Directory Specifications:
 
@@ -29,3 +32,5 @@ You may find errors or bugs in your initial design. If you do, fix your FSM impl
 - [FSM_V2](FSM_V2) : Updated design and testbench
 - [FSM_V3](FSM_V3) : Final design and testbench.
 - [Properties](properties) : Contains the assertion files and tcl script.
+- [Images](Images) : Contains the images used in this readme file.
+- [Gropu5_Report.pdf](Gropu5_Report.pdf) : Project report.
