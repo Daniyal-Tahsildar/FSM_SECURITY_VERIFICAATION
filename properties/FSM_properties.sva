@@ -1,0 +1,79 @@
+//define the module for properties
+module FSM_properties (
+    input wire clk_s,
+    input wire rst_s,
+    input wire A_s, B_s, C_s, D_s,
+    input [1:0] out_s
+);
+// Defining State variable   
+parameter S0 = 2'b00,
+             S1 = 2'b01,
+             S2 = 2'b10,
+             S3 = 2'b11;
+//p1: check reset function
+property p1_reset;
+	@(posedge clk_s) (rst_s==1'b1)|-> ((fsm_3.state_r==S0)&&(fsm_3.out_r==2'b00));
+endproperty
+
+//p2: check s0 to s1 transition
+property p2;
+	@(posedge clk_s) ((fsm_3.state_r==S0)&&(B_s==1'b1)&&(C_s==1'b0)) |->  (fsm_3.next_state==S1);
+endproperty
+
+//p3: check s0 to s2 transition
+property p3;
+	@(posedge clk_s) ((fsm_3.state_r==S0)&&(B_s==1'b0)&&(C_s==1'b1)) |->  (fsm_3.next_state==S2);
+endproperty
+
+//p4: considering c=0 and b=0 in the s0 to s2 transition
+property p4;
+	@(posedge clk_s) ((fsm_3.state_r==S0)&&(B_s==1'b0)&&(C_s==1'b0)) |->  (fsm_3.next_state==S0);
+endproperty
+//p5: check s1 to s1 transition
+property p5;
+	@(posedge clk_s) (fsm_3.state_r==S1) |-> (fsm_3.next_state==S1);
+endproperty
+
+//p6: check s2 to s1 transition
+property p6;
+	@(posedge clk_s) ((fsm_3.state_r==S2)&&(B_s==1'b1)&&(A_s==1'b0)) |->  (fsm_3.next_state==S1);
+endproperty
+
+//p7:check s2 to s3 transition
+property p7;
+	@(posedge clk_s) ((fsm_3.state_r==S2)&&(B_s==1'b0)&&(A_s==1'b1)) |->  (fsm_3.next_state==S3);
+endproperty
+
+//p8:considering a=0 and b=0 in checking s2 to s3 transition
+property p8;
+	@(posedge clk_s) ((fsm_3.state_r==S2)&&(B_s==1'b0)&&(A_s==1'b1)) |->  (fsm_3.next_state==S3);
+endproperty
+
+//p9: check s3 to s2
+property p9;
+	@(posedge clk_s) ((fsm_3.state_r==S3)&&(A_s==1'b0)) |->  (fsm_3.next_state==S2);
+endproperty
+
+//p10: check s3 considering a=1
+property p10;
+	@(posedge clk_s) ((fsm_3.state_r==S3)&&(A_s==1'b1)) |->  (fsm_3.next_state==S3);
+endproperty
+
+
+
+//@(posedge clk_s) (fsm_3.out_state==fsm_3.state_r) |-> ((out==$past(fsm_3.out_r))&&(fsm_3.out_r==fsm_3.out_state));
+
+//assert the properties
+s1_reset: assert property (p1_reset); //else $error("p1, premature result is passed to output");
+s2: assert property (p2);
+s3: assert property (p3);
+s4: assert property (p4);
+s5: assert property (p5);
+s6: assert property (p6);
+s7: assert property (p7);
+s8: assert property (p8);
+s9: assert property (p9);
+s10: assert property (p10);
+
+
+endmodule

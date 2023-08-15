@@ -1,0 +1,18 @@
+## Directories:
+
+FSM_V* => The versions of the design and testbench
+properties => 10 sva properties and binding file
+
+## To simulate using synopsys vcs for functional verification
+run the following command:
+	./run_sim.csh
+
+## To check the code coverage
+run the following command after running ./run_sim.csh:
+        dve -full64 -covdir simv.vdb/ 
+
+## To Check the properties in Jaspergold
+run the following command in Jaspergold:
+	source run_formal.tcl
+
+## ALL the design versions and reports are submitted in the canvas 

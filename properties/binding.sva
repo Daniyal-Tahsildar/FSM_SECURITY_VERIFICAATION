@@ -1,0 +1,3 @@
+module binding_module;
+bind fsm_3 FSM_properties FSM_design (  .clk_s(clk), .rst_s(rst), .A_s(A), .B_s(B), .C_s(C), .D_s(D), .out_s(out)  );
+endmodule
