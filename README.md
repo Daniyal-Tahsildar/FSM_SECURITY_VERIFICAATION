@@ -33,4 +33,4 @@ You may find errors or bugs in your initial design. If you do, fix your FSM impl
 - [FSM_V3](FSM_V3) : Final design and testbench.
 - [Properties](properties) : Contains the assertion files and tcl script.
 - [Images](Images) : Contains the images used in this readme file.
-- [Gropu5_Report.pdf](Gropu5_Report.pdf) : Project report.
+- [Gropu5_Report.pdf](Group5_Report.pdf) : Project report.
